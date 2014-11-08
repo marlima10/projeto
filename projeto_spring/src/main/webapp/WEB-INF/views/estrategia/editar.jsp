@@ -9,10 +9,10 @@
 <title>Edit strategy page</title>
 </head>
 <body>
-<h1>Edit strategy page</h1>
-<p>Here you can edit the existing strategy.</p>
+<h1>Pagina de Edição de Estrágia</h1>
+<p>Edite sua estratégia.</p>
 <p>${message}</p>
-<form:form method="POST" commandName="strategy" action="${pageContext.request.contextPath}/strategy/edit/${strategy.id}">
+<form:form method="POST" commandName="strategy" action="${pageContext.request.contextPath}/estrategia/editar/${strategy.id}">
 <table>
 <tbody>
 	<tr>

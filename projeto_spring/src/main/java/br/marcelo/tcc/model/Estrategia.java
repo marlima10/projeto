@@ -1,10 +1,10 @@
-package com.dtr.oas.model;
+package br.marcelo.tcc.model;
 
 import javax.persistence.*;;
 
 @Entity
 @Table(name="strategy",schema="projeto")
-public class Strategy {
+public class Estrategia {
 	
 	@Id
 	@SequenceGenerator	(name =	"SEQ_TESTE",sequenceName ="projeto.seq_strategy") 

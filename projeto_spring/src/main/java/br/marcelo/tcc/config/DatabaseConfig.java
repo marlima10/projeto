@@ -1,4 +1,4 @@
-package com.dtr.oas.config;
+package br.marcelo.tcc.config;
 
 import java.util.Properties;
 
@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan("com.dtr.oas")
+@ComponentScan("br.marcelo.tcc")
 @PropertySource("classpath:database.properties")
 public class DatabaseConfig {
 

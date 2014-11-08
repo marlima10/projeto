@@ -1,4 +1,4 @@
-package com.dtr.oas.controller;
+package br.marcelo.tcc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.ModelAndView;
@@ -9,12 +9,12 @@ public class LinkController {
 
 	@RequestMapping(value="/")
 	public ModelAndView mainPage() {
-		return new ModelAndView("home");
+		return new ModelAndView("/login/home");
 	}
 
 	@RequestMapping(value="/index")
 	public ModelAndView indexPage() {
-		return new ModelAndView("home");
+		return new ModelAndView("/login/home");
 	}
 
 }

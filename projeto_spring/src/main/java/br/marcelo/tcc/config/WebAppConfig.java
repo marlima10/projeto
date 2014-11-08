@@ -1,4 +1,4 @@
-package com.dtr.oas.config;
+package br.marcelo.tcc.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -12,7 +12,7 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.dtr.oas")
+@ComponentScan("br.marcelo.tcc")
 public class WebAppConfig extends WebMvcConfigurerAdapter {
 
 	@Bean
