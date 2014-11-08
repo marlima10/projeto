@@ -1,18 +1,18 @@
 package com.dtr.oas.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;;
 
 @Entity
-@Table(name="strategy")
+@Table(name="strategy",schema="projeto")
 public class Strategy {
 	
 	@Id
-	@GeneratedValue
+	@SequenceGenerator	(name =	"SEQ_TESTE",sequenceName ="projeto.seq_strategy") 
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SEQ_TESTE")
 	private Integer id;
+	@Column	(name="type") 
 	private String type;
+	@Column	(name="name") 
 	private String name;
 
 	public Integer getId() {
