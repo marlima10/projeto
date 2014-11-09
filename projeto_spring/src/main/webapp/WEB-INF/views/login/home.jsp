@@ -33,7 +33,7 @@
                         <h3 class="panel-title">Acessar o Sistema</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" action="${pageContext.request.contextPath}/sistema">
+                        <form role="form" action="${pageContext.request.contextPath}/sistema/logar">
                             <fieldset>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
@@ -43,6 +43,7 @@
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
                                 <input type="submit" class="btn btn-lg btn-success btn-block"  title="Acessar"/>
+                                <p style="color:red;font-family:verdana;font-size:80%;">${message}</p>
                             </fieldset>
                         </form>
                     </div>
