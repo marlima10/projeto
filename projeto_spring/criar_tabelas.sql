@@ -138,4 +138,4 @@ VALUES (NEXTVAL('projeto.seq_medico'),'Tamires','Feminino','Rua I','34.285.107-x
 INSERT INTO projeto.usuario (id,email,senha,id_perfil)
 VALUES (NEXTVAL('projeto.seq_medico'),'mar.lima10@gmail.com','123',1);
 INSERT INTO projeto.usuario (id,email,senha,id_perfil)
-VALUES (NEXTVAL('projeto.seq_medico'),'mar.lima10@hotmail.com','123',1);
+VALUES (NEXTVAL('projeto.seq_medico'),'mar.lima10@hotmail.com','123',2);

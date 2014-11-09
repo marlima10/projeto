@@ -1,14 +1,10 @@
 package br.marcelo.tcc.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.marcelo.tcc.dao.EstrategiaDAO;
 import br.marcelo.tcc.dao.UsuarioDAO;
-import br.marcelo.tcc.model.Estrategia;
 import br.marcelo.tcc.model.Usuario;
 
 @Service
@@ -31,6 +27,7 @@ public class UsuarioService{
 	}
 
 	public Usuario buscarUsuario(Usuario usuario){
-		return usuarioDAO.buscarUsuario(usuario.getEmail(), usuario.getSenha());
+		Usuario usuarioLogado = usuarioDAO.buscarUsuario(usuario.getEmail(), usuario.getSenha());
+		return usuarioLogado;
 	}
 }

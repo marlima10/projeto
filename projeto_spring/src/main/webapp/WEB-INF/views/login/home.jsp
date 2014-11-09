@@ -33,13 +33,13 @@
                         <h3 class="panel-title">Acessar o Sistema</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" action="${pageContext.request.contextPath}/sistema/logar">
+                        <form role="form" method="Post" action="${pageContext.request.contextPath}/sistema/logar">
                             <fieldset>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Senha" name="password" type="password" value="">
+                                    <input class="form-control" placeholder="Senha" name="senha" type="password" value="">
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
                                 <input type="submit" class="btn btn-lg btn-success btn-block"  title="Acessar"/>
@@ -51,6 +51,7 @@
             </div>
         </div>
     </div> 
+    
     <!-- jQuery -->
     <script src="<c:url value="/resources/js/jquery.js"/>"> </script>
     <!-- Bootstrap Core JavaScript -->
@@ -59,6 +60,7 @@
     <script src="<c:url value="/resources/js/plugins/metisMenu/metisMenu.min.js"/>"></script>
     <!-- Custom Theme JavaScript -->
     <script src="<c:url value="/resources/js/sb-admin-2.js"/>"></script>
+    
 </body>
 
 </html>

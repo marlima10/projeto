@@ -42,7 +42,7 @@ public class UsuarioDAO{
 	   montarSQL.append("and u.senha = '"+senha+"' ");
 	   
 	   try {
-		   Usuario usuario = (Usuario) session.createQuery(montarSQL.toString()).iterate().next();
+		   Usuario usuario = (Usuario) session.createQuery(montarSQL.toString()).list().get(0);
 		   return usuario;
 	   }catch (Exception e){
 		   return null;

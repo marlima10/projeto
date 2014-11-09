@@ -16,7 +16,7 @@ public class Perfil {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seqPerfil")	
 	private Integer id;
 	
-	@Column	(name="tipo") 
+	@Column	(name="tipo_perfil") 
 	private Integer tipo;
 	
 	public Integer getId() {
@@ -31,6 +31,4 @@ public class Perfil {
 	public void setTipo(Integer tipo) {
 		this.tipo = tipo;
 	}
-	
-	
 }

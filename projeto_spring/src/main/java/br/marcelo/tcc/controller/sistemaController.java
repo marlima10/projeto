@@ -39,4 +39,10 @@ public class sistemaController {
 		}
 		return modelAndView;
 	}
+	
+	@RequestMapping(value="/principal")
+	public ModelAndView principal() {
+		ModelAndView modelAndView = new ModelAndView("/login/principal");
+		return modelAndView;
+	}
 }
