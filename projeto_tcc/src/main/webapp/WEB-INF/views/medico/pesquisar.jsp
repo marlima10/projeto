@@ -21,7 +21,7 @@
     <!-- Custom CSS -->
     <link href="<c:url value="/resources/css/sb-admin-2.css"/>" rel="stylesheet">
     <!-- Custom Fonts -->
-    <link href="<c:url value="/resources/font-awesome-4.1.0/css/font-awesome.min.css"/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/resources/font-awesome-4.2.0/css/font-awesome.min.css"/>" rel="stylesheet" type="text/css">
     
 </head>
 
@@ -114,6 +114,11 @@
 			<!-- /.row -->
 			<div class="row">
 				<div class="col-lg-12">
+				<p style="color: blue;">${mensagem}</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
 					<br>
 					<div class="panel panel-primary">
 						<div class="panel-heading">Pesquisar Médicos</div>
@@ -129,7 +134,7 @@
 												placeholder="Digete o nome ou deixe em branco para filtrar todos os médicos">
 										</div>
 										<button type="submit" class="btn btn-primary">Pesquisar</button>
-										<a href="${pageContext.request.contextPath}/medico/adicionar"><button class="btn btn-primary">Adicionar Médico</button></a>
+										<a href="${pageContext.request.contextPath}/medico/adicionar"><input type="button" class="btn btn-primary" alt="Adicionar Médico" value="Adicionar"/></a>
 									</form>
 								</div>
 							</div>
@@ -152,7 +157,7 @@
 													<td>${medico.nome}</td>
 													<td>${medico.sexo}</td>
 													<td class="center">${medico.rg}</td>
-													<td class="center"><a href="${pageContext.request.contextPath}/medico/editar/${medico.id}"><i class="icon-edit">Editar</i></a></td>
+													<td class="center"><a href="${pageContext.request.contextPath}/medico/editar/${medico.id}"><button class="btn btn-primary btn-circle" type="button"><i class="fa fa-pencil-square-o"></i></button></a></td>
 												</tr>
 											</c:forEach>
 										</tbody>

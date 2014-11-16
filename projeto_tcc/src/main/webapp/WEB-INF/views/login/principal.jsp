@@ -21,7 +21,7 @@
     <!-- Custom CSS -->
     <link href="<c:url value="/resources/css/sb-admin-2.css"/>" rel="stylesheet">
     <!-- Custom Fonts -->
-    <link href="<c:url value="/resources/font-awesome-4.1.0/css/font-awesome.min.css"/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/resources/font-awesome-4.2.0/css/font-awesome.min.css"/>" rel="stylesheet" type="text/css">
     
 </head>
 
@@ -70,7 +70,7 @@
                             <a href="#"><i class="glyphicon glyphicon-briefcase"></i> Médico<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/medico/cadastrar">Cadastrar</a>
+                                    <a href="${pageContext.request.contextPath}/medico/adicionar/">Cadastrar</a>
                                 </li>
                                 <li>
                                     <a href="${pageContext.request.contextPath}/medico/pesquisar">Pesquisar</a>
@@ -82,7 +82,7 @@
                             <a href="#"><i class="fa fa-male"></i> Paciente<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/paciente/cadastrar">Cadastrar</a>
+                                    <a href="${pageContext.request.contextPath}/paciente/adicionar/">Cadastrar</a>
                                 </li>
                                 <li>
                                     <a href="${pageContext.request.contextPath}/paciente/pesquisar">Pesquisar</a>
@@ -91,10 +91,10 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-line-chart"></i> Exame<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-heart-o"></i> Exame<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/exame/cadastrar">Cadastrar</a>
+                                    <a href="${pageContext.request.contextPath}/exame/adicionar/">Cadastrar</a>
                                 </li>
                                 <li>
                                     <a href="${pageContext.request.contextPath}/exame/pesquisar">Pesquisar</a>

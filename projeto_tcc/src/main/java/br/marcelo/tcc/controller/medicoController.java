@@ -24,35 +24,38 @@ public class medicoController {
 	@RequestMapping(value="/adicionar", method=RequestMethod.GET)
 	public ModelAndView cadastrar() {
 		ModelAndView modelAndView = new ModelAndView("/medico/cadastrar");
+		modelAndView.addObject("medico", new Medico());
+		String paginaTipo = "Cadastro de Medico";
+		modelAndView.addObject("paginaTipo", paginaTipo);
 		return modelAndView;
 	}
 	
-	@RequestMapping(value="/adicionar", method=RequestMethod.POST)
+	@RequestMapping(value="/adicionar/", method=RequestMethod.POST)
 	public ModelAndView adicionar(@ModelAttribute Medico medico) {		
 		ModelAndView modelAndView = new ModelAndView("/medico/pesquisar");
 		medicoService.adicionar(medico);		
 		String mensagem = "Medico Adicionado com sucesso!!!.";
-		modelAndView.addObject("message", mensagem);
-		//teste
+		modelAndView.addObject("mensagem", mensagem);
 		return modelAndView;
 	}
 	
+	@RequestMapping(value="/adicionar/{id}", method=RequestMethod.POST)
+	public ModelAndView salvarEdicao(@ModelAttribute Medico medico, @PathVariable Integer id) {
+		ModelAndView modelAndView = new ModelAndView("/medico/pesquisar");	
+		medicoService.atualizar(medico);	
+		String mensagem = "Médico editada com sucesso!!!.";
+		modelAndView.addObject("mensagem", mensagem);
+		return modelAndView;
+	}
+		
 	@RequestMapping(value="/editar/{id}", method=RequestMethod.GET)
 	public ModelAndView editar(@PathVariable Integer id) {
-		ModelAndView modelAndView = new ModelAndView("/medico/editar");
+		ModelAndView modelAndView = new ModelAndView("/medico/cadastrar");
 		Medico medico = medicoService.getMedico(id);
 		modelAndView.addObject("medico",medico);
 		return modelAndView;
 	}
 	
-	@RequestMapping(value="/editar/{id}", method=RequestMethod.POST)
-	public ModelAndView salvarEdicao(@ModelAttribute Medico medico, @PathVariable Integer id) {
-		ModelAndView modelAndView = new ModelAndView("/medico/pesquisar");	
-		medicoService.atualizar(medico);	
-		String message = "Estratégia editada com sucesso!!!.";
-		modelAndView.addObject("message", message);
-		return modelAndView;
-	}
 	
 	@RequestMapping(value="/delete/{id}", method=RequestMethod.GET)
 	public ModelAndView deletar(@PathVariable Integer id) {
