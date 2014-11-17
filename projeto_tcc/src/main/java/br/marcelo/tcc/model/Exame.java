@@ -1,6 +1,23 @@
 package br.marcelo.tcc.model;
 
-import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 @Entity
 @Table(name="exame",schema="projeto")
@@ -19,7 +36,11 @@ public class Exame {
 	private Medico medico;
 	
 	@Column	(name="observacoes") 
-	private String Observacoes;
+	private String observacoes;
+	
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "exame")
+	@Cascade(CascadeType.ALL)
+	private Collection<Medicoes> medicoes;
 	
 	public Integer getId() {
 		return id;
@@ -40,9 +61,28 @@ public class Exame {
 		this.medico = medico;
 	}
 	public String getObservacoes() {
-		return Observacoes;
+		return observacoes;
 	}
 	public void setObservacoes(String observacoes) {
-		Observacoes = observacoes;
+		this.observacoes = observacoes;
 	}
+	public Collection<Medicoes> getMedicoes() {
+		return medicoes;
+	}
+	public void setMedicoes(Collection<Medicoes> medicoes) {
+		this.medicoes = medicoes;
+	}	
+	public Collection<Medicoes> getMedicoesUltimas() {
+		List<Medicoes> ultimasMedicoes = new ArrayList<Medicoes>();
+		Integer i = 0;
+		for(Medicoes m:medicoes){
+			ultimasMedicoes.add(m);
+			if (i>=2){
+				break;
+			}else{
+				i++;
+			}
+		}
+		return ultimasMedicoes;
+	}	
 }

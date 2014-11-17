@@ -93,6 +93,7 @@ CREATE TABLE projeto.medicoes (
    id_exame		 				INTEGER 		NOT NULL,
    pressao_sistolica					INTEGER 		NOT NULL,
    pressao_diastolica					INTEGER 		NOT NULL,
+   batimento					INTEGER 		NOT NULL,
    data_hora						TIMESTAMP 		NOT NULL
 );  
 
@@ -139,3 +140,24 @@ INSERT INTO projeto.usuario (id,email,senha,id_perfil)
 VALUES (NEXTVAL('projeto.seq_medico'),'mar.lima10@gmail.com','123',1);
 INSERT INTO projeto.usuario (id,email,senha,id_perfil)
 VALUES (NEXTVAL('projeto.seq_medico'),'mar.lima10@hotmail.com','123',2);
+
+INSERT INTO projeto.medicoes (id,id_exame,pressao_sistolica,pressao_diastolica,batimento,data_hora)
+VALUES (NEXTVAL('projeto.seq_medicoes'),50,120,90,95,CURRENT_TIMESTAMP);
+INSERT INTO projeto.medicoes (id,id_exame,pressao_sistolica,pressao_diastolica,batimento,data_hora)
+VALUES (NEXTVAL('projeto.seq_medicoes'),50,125,85,95,CURRENT_TIMESTAMP);
+INSERT INTO projeto.medicoes (id,id_exame,pressao_sistolica,pressao_diastolica,batimento,data_hora)
+VALUES (NEXTVAL('projeto.seq_medicoes'),50,140,89,95,CURRENT_TIMESTAMP);
+INSERT INTO projeto.medicoes (id,id_exame,pressao_sistolica,pressao_diastolica,batimento,data_hora)
+VALUES (NEXTVAL('projeto.seq_medicoes'),50,155,95,95,CURRENT_TIMESTAMP);
+INSERT INTO projeto.medicoes (id,id_exame,pressao_sistolica,pressao_diastolica,batimento,data_hora)
+VALUES (NEXTVAL('projeto.seq_medicoes'),50,160,75,95,CURRENT_TIMESTAMP);
+INSERT INTO projeto.medicoes (id,id_exame,pressao_sistolica,pressao_diastolica,batimento,data_hora)
+VALUES (NEXTVAL('projeto.seq_medicoes'),100,120,90,95,CURRENT_TIMESTAMP);
+INSERT INTO projeto.medicoes (id,id_exame,pressao_sistolica,pressao_diastolica,batimento,data_hora)
+VALUES (NEXTVAL('projeto.seq_medicoes'),100,125,85,95,CURRENT_TIMESTAMP);
+INSERT INTO projeto.medicoes (id,id_exame,pressao_sistolica,pressao_diastolica,batimento,data_hora)
+VALUES (NEXTVAL('projeto.seq_medicoes'),100,140,89,95,CURRENT_TIMESTAMP);
+INSERT INTO projeto.medicoes (id,id_exame,pressao_sistolica,pressao_diastolica,batimento,data_hora)
+VALUES (NEXTVAL('projeto.seq_medicoes'),100,155,95,95,CURRENT_TIMESTAMP);
+INSERT INTO projeto.medicoes (id,id_exame,pressao_sistolica,pressao_diastolica,batimento,data_hora)
+VALUES (NEXTVAL('projeto.seq_medicoes'),100,160,75,95,CURRENT_TIMESTAMP);

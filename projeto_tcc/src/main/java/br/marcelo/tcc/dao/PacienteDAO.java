@@ -39,16 +39,20 @@ public class PacienteDAO{
 		   Session session = getCurrentSession(); 
 		   
 		   StringBuilder montarSQL = new StringBuilder();
-		   montarSQL.append("from paciente p ");
+		   montarSQL.append("from Paciente p ");
 		   montarSQL.append("where 1 = 1 ");
 		   if(nome != null && !nome.trim().equals("")){
 			   montarSQL.append("and p.nome = '"+nome+"' ");
 		   }
 		   try {
-			   List<Paciente> listaPacientes = (List<Paciente>) session.createQuery(montarSQL.toString());
+			   List<Paciente> listaPacientes = (List<Paciente>) session.createQuery(montarSQL.toString()).list();
 			   return listaPacientes;
 		   }catch (Exception e){
 			   return null;
 		   }	   
+	}
+	
+	public void atualizar(Paciente paciente) {
+		getCurrentSession().update(paciente);
 	}
 }

@@ -8,6 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.marcelo.tcc.dao.ExameDAO;
 import br.marcelo.tcc.model.Exame;
+import br.marcelo.tcc.model.Medico;
+import br.marcelo.tcc.model.Paciente;
 
 @Service
 @Transactional
@@ -28,8 +30,32 @@ public class ExameService{
 		exameDAO.cadastrar(exame);
 	}
 
-	public List<Exame> buscarUsuario(Integer idPaciente, Integer idMedico){
+	public List<Exame> buscarExame(Integer idPaciente, Integer idMedico){
 		List<Exame> listaExanes = exameDAO.buscarExamePorPaciente(idPaciente, idMedico);
 		return listaExanes;
 	}
+	
+	public List<Paciente>listaPacientes(){
+		List<Paciente> listaPacientes = exameDAO.buscarPaciente();
+		return listaPacientes;
+	}
+	
+	public List<Medico> listaMedicos(){
+		List<Medico> listaMedicos = exameDAO.buscarMedico();
+		return listaMedicos;
+	}
+	
+	public void atualizar(Exame exame) {
+		exameDAO.atualizar(exame);
+	}
+
+	public Medico getMedico(Integer idMedico) {
+		return exameDAO.getMedico(idMedico);
+	}
+
+	public Paciente getPaciente(Integer idPaciente) {
+		return exameDAO.getPaciente(idPaciente);
+	}
+	
+	
 }

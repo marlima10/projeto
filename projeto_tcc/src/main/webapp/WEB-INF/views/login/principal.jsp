@@ -67,7 +67,7 @@
                             <a href="${pageContext.request.contextPath}/sistema/principal"><i class="fa fa-home"></i> Principal</a>
                         </li>
                         <li>
-                            <a href="#"><i class="glyphicon glyphicon-briefcase"></i> Médico<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-user-md"></i> Médico<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="${pageContext.request.contextPath}/medico/adicionar/">Cadastrar</a>
@@ -91,7 +91,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-heart-o"></i> Exame<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-area-chart"></i> Exame<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="${pageContext.request.contextPath}/exame/adicionar/">Cadastrar</a>
@@ -123,7 +123,7 @@
 	                        <div class="panel-heading">
 	                            <div class="row">
 	                                <div class="col-xs-3">
-	                                    <i class="fa fa-comments fa-5x"></i>
+	                                    <i class="fa fa-user-md fa-5x"></i>
 	                                </div>
 	                                <div class="col-xs-9 text-right">
 	                                    <div class="huge"></div>
@@ -145,15 +145,15 @@
 	                        <div class="panel-heading">
 	                            <div class="row">
 	                                <div class="col-xs-3">
-	                                    <i class="fa fa-shopping-cart fa-5x"></i>
+	                                    <i class="fa fa-male fa-5x"></i>
 	                                </div>
 	                                <div class="col-xs-9 text-right">
-	                                    <div class="huge">124</div>
+	                                    <div class="huge"></div>
 	                                    <div>Pacientes</div>
 	                                </div>
 	                            </div>
 	                        </div>
-	                        <a href="#">
+	                        <a href="${pageContext.request.contextPath}/paciente/pesquisar/">
 	                            <div class="panel-footer">
 	                                <span class="pull-left">View Details</span>
 	                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -167,15 +167,15 @@
 	                        <div class="panel-heading">
 	                            <div class="row">
 	                                <div class="col-xs-3">
-	                                    <i class="fa fa-support fa-5x"></i>
+	                                    <i class="fa fa-area-chart fa-5x"></i>
 	                                </div>
 	                                <div class="col-xs-9 text-right">
-	                                    <div class="huge">13</div>
+	                                    <div class="huge"></div>
 	                                    <div>Exames</div>
 	                                </div>
 	                            </div>
 	                        </div>
-	                        <a href="#">
+	                        <a href="${pageContext.request.contextPath}/exame/pesquisar/">
 	                            <div class="panel-footer">
 	                                <span class="pull-left">View Details</span>
 	                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

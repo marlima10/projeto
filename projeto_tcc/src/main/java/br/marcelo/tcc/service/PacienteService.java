@@ -32,4 +32,8 @@ public class PacienteService{
 		List<Paciente> listaPacientes = (List<Paciente>) pacienteDAO.buscarPaciente(nome);
 		return listaPacientes;
 	}
+	
+	public void atualizar(Paciente paciente) {
+		pacienteDAO.atualizar(paciente);
+	}
 }

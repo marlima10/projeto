@@ -67,10 +67,10 @@
                             <a href="${pageContext.request.contextPath}/sistema/principal"><i class="fa fa-home"></i> Principal</a>
                         </li>
                         <li>
-                            <a href="#"><i class="glyphicon glyphicon-briefcase"></i> Médico<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-user-md"></i> Médico<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/medico/cadastrar">Cadastrar</a>
+                                    <a href="${pageContext.request.contextPath}/medico/adicionar/">Cadastrar</a>
                                 </li>
                                 <li>
                                     <a href="${pageContext.request.contextPath}/medico/pesquisar">Pesquisar</a>
@@ -82,7 +82,7 @@
                             <a href="#"><i class="fa fa-male"></i> Paciente<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/paciente/cadastrar">Cadastrar</a>
+                                    <a href="${pageContext.request.contextPath}/paciente/adicionar/">Cadastrar</a>
                                 </li>
                                 <li>
                                     <a href="${pageContext.request.contextPath}/paciente/pesquisar">Pesquisar</a>
@@ -91,10 +91,10 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-line-chart"></i> Exame<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-area-chart"></i> Exame<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/exame/cadastrar">Cadastrar</a>
+                                    <a href="${pageContext.request.contextPath}/exame/adicionar/">Cadastrar</a>
                                 </li>
                                 <li>
                                     <a href="${pageContext.request.contextPath}/exame/pesquisar">Pesquisar</a>

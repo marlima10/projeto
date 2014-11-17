@@ -24,9 +24,15 @@ public class sistemaController {
 		usuarioLogado = usuarioService.buscarUsuario(usuario);
 		
 		if (usuarioLogado != null && usuarioLogado.getId() > 0){
-			modelAndView.setViewName("/login/principal");
-			String mensagem = "Bem vindo ao sistema!!!";
-			modelAndView.addObject("message", mensagem);
+			if (usuarioLogado.getPerfil().getTipo() == 1){
+				modelAndView.setViewName("/login/principal");
+				String mensagem = "Bem vindo ao sistema!!!";
+				modelAndView.addObject("message", mensagem);
+			}else{
+				modelAndView.setViewName("/login/principalPaciente");
+				String mensagem = "Bem vindo ao sistema!!!";
+				modelAndView.addObject("message", mensagem);
+			}
 		}else{
 			modelAndView.setViewName("/login/home");
 			String mensagem = "Usuário não encontrado!!!";
