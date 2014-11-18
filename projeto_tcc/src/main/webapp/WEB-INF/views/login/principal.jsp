@@ -155,7 +155,7 @@
 	                        </div>
 	                        <a href="${pageContext.request.contextPath}/paciente/pesquisar/">
 	                            <div class="panel-footer">
-	                                <span class="pull-left">Acessar Módulo</span>
+	                                <span class="pull-left">View Details</span>
 	                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 	                                <div class="clearfix"></div>
 	                            </div>
@@ -177,7 +177,7 @@
 	                        </div>
 	                        <a href="${pageContext.request.contextPath}/exame/pesquisar/">
 	                            <div class="panel-footer">
-	                                <span class="pull-left">Acessar Módulo</span>
+	                                <span class="pull-left">View Details</span>
 	                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 	                                <div class="clearfix"></div>
 	                            </div>

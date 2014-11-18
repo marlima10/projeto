@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,7 +27,6 @@ public class exameController {
 	public ModelAndView cadastrar() {
 		ModelAndView modelAndView = new ModelAndView("/exame/cadastrar");
 		modelAndView.addObject("exame", new Exame());
-		
 		String paginaTipo = "Cadastro de exame";
 		modelAndView.addObject("paginaTipo", paginaTipo);
 		List<Paciente> listaPacientes = exameService.listaPacientes();
@@ -56,15 +56,10 @@ public class exameController {
 	}
 	
 	@RequestMapping(value="/adicionar/{id}", method=RequestMethod.POST)
-	public ModelAndView salvarEdicao(@RequestParam("txt_paciente") Integer idPaciente,@RequestParam("txt_medico") Integer idMedico,@RequestParam("txt_observacoes") String observacoes,@RequestParam("txt_id") Integer id) {
-		ModelAndView modelAndView = new ModelAndView("/exame/pesquisar");
-		
-		Exame exame = exameService.getExame(id);
-		exame.setMedico(exameService.getMedico(idMedico));
-		exame.setPaciente(exameService.getPaciente(idPaciente));
-		exame.setObservacoes(observacoes);
+	public ModelAndView salvarEdicao(@ModelAttribute Exame exame, @PathVariable Integer id) {
+		ModelAndView modelAndView = new ModelAndView("/exame/pesquisar");	
 		exameService.atualizar(exame);	
-		String mensagem = "Exame editada com sucesso!!!.";
+		String mensagem = "exame editada com sucesso!!!.";
 		modelAndView.addObject("mensagem", mensagem);
 		return modelAndView;
 	}
@@ -74,14 +69,6 @@ public class exameController {
 		ModelAndView modelAndView = new ModelAndView("/exame/cadastrar");
 		Exame exame = exameService.getExame(id);
 		modelAndView.addObject("exame",exame);
-		
-		String paginaTipo = "Edição de exame";
-		modelAndView.addObject("paginaTipo", paginaTipo);
-		List<Paciente> listaPacientes = exameService.listaPacientes();
-		modelAndView.addObject("listaPacientes", listaPacientes);
-		List<Medico> listaMedicos = exameService.listaMedicos();
-		modelAndView.addObject("listaMedicos", listaMedicos);
-		
 		return modelAndView;
 	}
 	
@@ -106,15 +93,6 @@ public class exameController {
 		modelAndView.addObject("listaPacientes", listaPacientes);
 		List<Medico> listaMedicos = exameService.listaMedicos();
 		modelAndView.addObject("listaMedicos", listaMedicos);
-		return modelAndView;
-	}
-	
-	@RequestMapping(value="/medicao/{id}", method=RequestMethod.GET)
-	public ModelAndView medicao(@PathVariable Integer id) {
-		ModelAndView modelAndView = new ModelAndView("/exame/medicao");
-		Exame exame = exameService.getExame(id);
-		
-		modelAndView.addObject("exame",exame);
 		return modelAndView;
 	}
 }
