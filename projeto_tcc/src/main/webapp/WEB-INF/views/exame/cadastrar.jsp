@@ -126,9 +126,17 @@
 												<tbody>
 													<tr>
 														<td>
+															<input type="hidden" name="txt_id" id="txt_id" value="${exame.id}"/>
 															<label>Paciente</label> 
 															<select name="txt_paciente" id="txt_paciente"  class="form-control">
-																<option value="" label="-" />
+																<c:choose>
+																	<c:when test="${exame != null && exame.id > 0}">
+																		<option value="${exame.paciente.id}">${exame.paciente.nome}</option>
+																	</c:when>
+																	<c:otherwise>
+																		<option value="" label="-" />
+																	</c:otherwise>																
+																</c:choose>
 																<c:forEach items="${listaPacientes}" var="paciente">
 																	<option value="${paciente.id}">${paciente.nome}</option>
 																</c:forEach>
@@ -139,7 +147,14 @@
 														<td>
 															<label>Medico</label> 
 															<select name="txt_medico" id="txt_medico"  class="form-control">
-																<option value="" label="-" />
+																<c:choose>
+																	<c:when test="${exame != null && exame.id > 0}">
+																		<option value="${exame.medico.id}">${exame.medico.nome}</option>
+																	</c:when>
+																	<c:otherwise>
+																		<option value="" label="-" />
+																	</c:otherwise>																
+																</c:choose>
 																<c:forEach items="${listaMedicos}" var="medico">
 																	<option value="${medico.id}">${medico.nome}</option>
 																</c:forEach>
@@ -147,13 +162,13 @@
 														</td>
 													</tr>	
 													<tr>
-														<td><label>Observações</label> <input type="text" name="txt_observacoes" id="txt_observacoes" class="form-control"/></td>
+														<td><label>Observações</label> <input type="text" name="txt_observacoes" id="txt_observacoes" class="form-control" value="${exame.observacoes}"/></td>
 													</tr>								
 													<tr>
 														<td colspan="2" >
 															<br><br>
 															<button type="submit" class="btn btn-primary">Salvar</button>
-															<a href="${pageContext.request.contextPath}/paciente/pesquisar"><input type="button" class="btn btn-primary" alt="Voltar" value="Voltar"/></a>
+															<a href="${pageContext.request.contextPath}/exame/pesquisar"><input type="button" class="btn btn-primary" alt="Voltar" value="Voltar"/></a>
 														</td>
 													</tr>
 												</tbody>

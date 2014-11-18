@@ -18,6 +18,7 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
+import org.json.simple.JSONArray;
 
 @Entity
 @Table(name="exame",schema="projeto")
@@ -84,5 +85,42 @@ public class Exame {
 			}
 		}
 		return ultimasMedicoes;
-	}	
+	}
+	
+	@SuppressWarnings("unchecked")
+	public String getMedicoesData() {       		  
+		  JSONArray listaSistole = new JSONArray();
+		  JSONArray listaDiastole = new JSONArray();	  
+		  for(Medicoes m:medicoes){
+			  listaDiastole.add(m.getPressao_diastolica());
+			  listaSistole.add(m.getPressao_sistolica());
+		  }		  
+  		  StringBuilder montarDados = new StringBuilder();
+  		  montarDados.append("series: [");
+  		  montarDados.append("{name: 'Pressão arterial sistole', ");       
+  		  montarDados.append("data: ");
+  		  montarDados.append(listaSistole);
+  		  montarDados.append("},{name: 'Pressão arterial diastole', ");       
+  		  montarDados.append("data: ");
+  		  montarDados.append(listaDiastole);
+  		  montarDados.append(" }]");
+		  
+		  return montarDados.toString();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public String getMedicoesBatimento() {       		  
+		  JSONArray listaBatimentos = new JSONArray();	  
+		  for(Medicoes m:medicoes){
+			  listaBatimentos.add(m.getBatimento());
+		  }		  
+  		  StringBuilder montarDados = new StringBuilder();
+  		  montarDados.append("series: [");
+  		  montarDados.append("{name: 'Batimento cardíaco', ");       
+  		  montarDados.append("data: ");
+  		  montarDados.append(listaBatimentos);
+  		  montarDados.append(" }]");
+		  
+		  return montarDados.toString();
+	}
 }

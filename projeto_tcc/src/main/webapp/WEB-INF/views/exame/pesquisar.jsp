@@ -21,7 +21,8 @@
     <!-- Custom CSS -->
     <link href="<c:url value="/resources/css/sb-admin-2.css"/>" rel="stylesheet">   
     <link href="<c:url value="/resources/font-awesome-4.2.0/css/font-awesome.min.css"/>" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="<c:url value="/resources/css/plugins/morris.css"/>">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+     
 </head>
 
 <body>
@@ -157,6 +158,7 @@
 												<th>Nome Paciente</th>
 												<th>Nome Medico</th>
 												<th>Ultimas Medições</th>
+												<th>Exibir Resultados</th>
 												<th>Editar</th>
 											</tr>
 										</thead>
@@ -223,7 +225,58 @@
 												                         <!-- /.Panel Medições -->
 												                        <div class="panel-body">
 												                            <div class="table-responsive table-bordered">
-												                                <div id="morris-area-chart"></div>
+												                            	    <script type="text/javascript">
+																						$(function () {
+																						    $('#container_'+${exame.id}).highcharts({
+																						        chart: {
+																						            type: 'area'
+																						        },
+																						        title: {
+																						            text: 'Ultimos Resultados'
+																						        },
+																						        xAxis: {
+																						            allowDecimals: false,
+																						            labels: {
+																						                formatter: function () {
+																						                    return this.value; // clean, unformatted number for year
+																						                }
+																						            }
+																						        },
+																						        yAxis: {
+																						            title: {
+																						                text: 'Pressão arterial ml/Hg'
+																						            },
+																						            labels: {
+																						                formatter: function () {
+																						                    return this.value;
+																						                }
+																						            }
+																						        },
+																						        tooltip: {
+																						            pointFormat: '{series.name}:<b>{point.y:,.0f}</b>'
+																						        },
+																						        plotOptions: {
+																						            area: {
+																						                pointStart: 1,
+																						                marker: {
+																						                    enabled: false,
+																						                    symbol: 'circle',
+																						                    radius: 2,
+																						                    states: {
+																						                        hover: {
+																						                            enabled: true
+																						                        }
+																						                    }
+																						                }
+																						            }
+																						        },
+																						        
+																						        ${exame.medicoesData}
+																						        
+																						    });
+																						});
+																					</script>
+												                                <div id="container_${exame.id}" style="min-width: 800px; height: 400px; margin: 0 auto"></div>
 												                            </div>
 												                            <!-- /.table-responsive -->
 												                        </div>
@@ -235,7 +288,8 @@
 														  </div>
 														</div>	
 													</td>
-													<td class="center"><a href="${pageContext.request.contextPath}/exame/editar/${exame.id}"><button class="btn btn-primary btn-circle" type="button"><i class="fa fa-pencil-square-o"></i></button></a></td>
+													<td class="center"><a href="${pageContext.request.contextPath}/exame/medicao/${exame.id}" title="Ver Resumo"><button class="btn btn-danger btn-circle" type="button" ><i class="fa fa-area-chart"></i></button></a></td>
+													<td class="center"><a href="${pageContext.request.contextPath}/exame/editar/${exame.id}" title="Ver Resultados"><button class="btn btn-primary btn-circle" type="button"><i class="fa fa-pencil-square-o"></i></button></a></td>
 												</tr>
 											</c:forEach>
 										</tbody>
@@ -268,11 +322,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="<c:url value="/resources/js/sb-admin-2.js"/>"></script>
     
-
-	<script src="<c:url value="/resources/js/plugins/morris/raphael.min.js"/>"></script>
-	<script src="<c:url value="/resources/js/plugins/morris/morris.min.js"/>"></script>
-	<script src="<c:url value="/resources/js/plugins/morris/morris-data.js"/>"></script>
-	
+    <script src="<c:url value="/resources/chart/js/highcharts.js"/>"></script>
 </body>
 
 </html>

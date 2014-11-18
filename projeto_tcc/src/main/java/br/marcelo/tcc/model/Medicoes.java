@@ -77,5 +77,4 @@ public class Medicoes {
 	public void setBatimento(Integer batimento) {
 		this.batimento = batimento;
 	}
-	
 }
